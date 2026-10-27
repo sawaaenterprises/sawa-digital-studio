@@ -1,0 +1,3 @@
+- [ ] Redesign shared typography, palette, navigation and footer.
+- [ ] Rebuild home and page-level visuals, with prominent page links within the content.
+- [ ] Preserve forms and verify navigation, motion and narrow-screen layout.

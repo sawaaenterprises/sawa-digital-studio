@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep the visual theme in src/styles.css semantic tokens; shared site components carry navigation, project artwork and page discovery so every content route stays visually consistent.
