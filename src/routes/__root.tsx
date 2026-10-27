@@ -85,7 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Sawaa Enterprises builds business websites, portfolios, e-commerce stores, admin dashboards and web apps for clients worldwide." },
       { name: "author", content: "Syed Abdul Wahab" },
       { name: "robots", content: "index, follow" },
-      { name: "theme-color", content: "#3b8fe8" },
+      { name: "theme-color", content: "#f08a6c" },
       { property: "og:site_name", content: "Sawaa Enterprises" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

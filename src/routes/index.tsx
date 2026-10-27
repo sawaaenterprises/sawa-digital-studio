@@ -3,6 +3,7 @@ import { ArrowRight, Globe2, Layout, ShoppingCart, LayoutDashboard, Code2, Brief
 import logo from "@/assets/logo.png";
 import { Reveal } from "@/components/site/Reveal";
 import { CtaBand } from "@/components/site/CtaBand";
+import { HomeExtra } from "@/components/site/HomeExtra";
 import { SITE, WORK, CERTS } from "@/lib/site";
 import { seo } from "@/lib/seo";
 
@@ -197,6 +198,7 @@ function Index() {
         </div>
       </section>
 
+      <HomeExtra />
       <CtaBand />
     </>
   );
