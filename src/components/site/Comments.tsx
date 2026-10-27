@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { z } from "zod";
 import { MessageSquare, Send } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { Button } from "@/components/ui/button";
 
 type C = { id: string; name: string; country: string | null; body: string; created_at: string };
 const schema = z.object({
@@ -39,7 +40,7 @@ export function Comments() {
     setForm({ name: "", country: "", body: "" });
   };
 
-  const input = "w-full rounded-xl border bg-background px-4 py-3 outline-none transition focus:border-primary focus:ring-4 focus:ring-primary/15";
+  const input = "w-full rounded-md border bg-background px-4 py-3 outline-none transition focus:border-primary focus:ring-4 focus:ring-primary/15";
   return (
     <div className="grid gap-10 lg:grid-cols-5">
       <form onSubmit={submit} className="space-y-4 lux-card p-6 shadow-soft lg:col-span-2">
@@ -49,9 +50,9 @@ export function Comments() {
         <input className={input} placeholder="Country (optional)" maxLength={60} value={form.country} onChange={(e) => setForm({ ...form, country: e.target.value })} />
         <textarea className={`${input} min-h-28`} placeholder="Share your thoughts…" maxLength={500} value={form.body} onChange={(e) => setForm({ ...form, body: e.target.value })} />
         {err && <p className="text-sm text-destructive">{err}</p>}
-        <button disabled={busy} className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-primary px-6 py-3 text-primary-foreground shadow-glow disabled:opacity-60">
+        <Button type="submit" disabled={busy} className="studio-button w-full">
           <Send className="h-4 w-4" /> {busy ? "Posting…" : "Post comment"}
-        </button>
+        </Button>
       </form>
       <div className="max-h-[560px] space-y-4 overflow-y-auto pr-2 lg:col-span-3">
         {list.map((c) => (

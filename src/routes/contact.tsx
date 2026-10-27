@@ -6,6 +6,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { PageHero, Reveal } from "@/components/site/Reveal";
 import { SITE } from "@/lib/site";
 import { seo } from "@/lib/seo";
+import { Button } from "@/components/ui/button";
+import { PageDirectory } from "@/components/site/PageDirectory";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({ meta: seo("Contact Sawaa Enterprises — Let's Talk About Your Website", "Tell us about your website, store, dashboard or web app. Free consultation for clients worldwide. Email sawaaenterprises@gmail.com.") }),
@@ -36,7 +38,7 @@ function Contact() {
     setState("done");
   };
 
-  const input = "w-full rounded-xl border bg-background px-4 py-3.5 outline-none transition focus:border-primary focus:ring-4 focus:ring-primary/15";
+  const input = "w-full rounded-md border bg-background px-4 py-3.5 outline-none transition focus:border-primary focus:ring-4 focus:ring-primary/15";
   return (
     <>
       <PageHero eyebrow="Contact" title={<>Let's build something <span className="text-gradient">great together.</span></>} text={SITE.cta} />
@@ -71,13 +73,14 @@ function Contact() {
               </select>
               <textarea className={`${input} min-h-40 sm:col-span-2`} placeholder="Tell us about your project *" maxLength={2000} value={f.message} onChange={(e) => setF({ ...f, message: e.target.value })} />
               {err && <p className="text-sm text-destructive sm:col-span-2">{err}</p>}
-              <button disabled={state === "busy"} className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-primary px-8 py-4 text-primary-foreground shadow-glow transition hover:-translate-y-0.5 disabled:opacity-60 sm:col-span-2">
+              <Button type="submit" disabled={state === "busy"} className="studio-button sm:col-span-2">
                 <Send className="h-5 w-5" /> {state === "busy" ? "Sending…" : "Let's Talk"}
-              </button>
+              </Button>
             </form>
           )}
         </Reveal>
       </section>
+      <PageDirectory />
     </>
   );
 }
