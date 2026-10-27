@@ -1,5 +1,7 @@
 import { useEffect, useRef, type ReactNode } from "react";
-import { Asterisk } from "lucide-react";
+import { Asterisk, ArrowLeft } from "lucide-react";
+import { useRouter } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
 
 export function Reveal({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -26,10 +28,15 @@ export function Reveal({ children, delay = 0, className = "" }: { children: Reac
 }
 
 export function PageHero({ eyebrow, title, text }: { eyebrow: string; title: ReactNode; text: string }) {
+  const router = useRouter();
   return (
     <section className="page-hero">
       <Asterisk className="hero-small-art slow-rotate" aria-hidden="true" />
       <div className="site-container">
+        <Button variant="outline" className="page-back" onClick={() => {
+          if (router.history.canGoBack()) router.history.back();
+          else void router.navigate({ to: "/" });
+        }}><span className="page-back-icon"><ArrowLeft /></span><span>Back</span></Button>
         <Reveal>
           <span className="eyebrow">
             {eyebrow}

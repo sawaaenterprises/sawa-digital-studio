@@ -1,10 +1,14 @@
 import { Link } from '@tanstack/react-router';
-import { Github, Triangle, Globe, ShieldCheck, Search, Smartphone, Gauge, Server, Palette, ShoppingBag, LayoutDashboard, Code2, ArrowUpRight, Users } from 'lucide-react';
+import { Globe, ShieldCheck, Search, Smartphone, Gauge, Server, Palette, ShoppingBag, LayoutDashboard, Code2, ArrowUpRight, Users } from 'lucide-react';
+import { siGithub, siVercel } from 'simple-icons';
 import { Reveal } from './Reveal';
 
+function GithubLogo() { return <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={siGithub.path} /></svg>; }
+function VercelLogo() { return <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={siVercel.path} /></svg>; }
+
 const TOOLS = [
-  { icon: Github, t: 'GitHub', d: 'Clean, versioned code you own forever.' },
-  { icon: Triangle, t: 'Vercel', d: 'Lightning-fast global hosting & deploys.' },
+  { icon: GithubLogo, t: 'GitHub', d: 'Clean, versioned code you own forever.' },
+  { icon: VercelLogo, t: 'Vercel', d: 'Lightning-fast global hosting & deploys.' },
   { icon: Globe, t: 'Your domain', d: 'Setup, connection and email-ready DNS.' },
   { icon: ShieldCheck, t: 'SSL & security', d: 'HTTPS, protection and safe forms.' },
   { icon: Search, t: 'SEO ready', d: 'Indexed on Google from day one.' },
@@ -24,7 +28,7 @@ export function Toolkit() {
       <div className="tool-grid">
         {TOOLS.map((x, i) => (
           <Reveal key={x.t} delay={(i % 4) * 60}>
-            <div className="tool-card"><span className="tool-icon"><x.icon /></span><h3>{x.t}</h3><p>{x.d}</p></div>
+            <div className="tool-card"><span className={`tool-icon${i < 2 ? ' tool-brand-icon' : ''}`}><x.icon /></span><h3>{x.t}</h3><p>{x.d}</p></div>
           </Reveal>
         ))}
       </div>

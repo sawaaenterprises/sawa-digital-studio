@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep the visual theme in src/styles.css semantic tokens; shared site components carry navigation, project artwork and page discovery so every content route stays visually consistent.
+- Put secondary-page back navigation in the shared PageHero, using router history with a home fallback for direct visits; source named brand icons from Simple Icons to preserve authentic silhouettes.
