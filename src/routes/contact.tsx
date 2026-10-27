@@ -49,7 +49,7 @@ function Contact() {
           ].map((x) => (
             <a key={x.l} href={x.href} className="flex gap-4 lux-card p-6 transition hover:shadow-soft">
               <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-primary text-primary-foreground"><x.icon className="h-5 w-5" /></span>
-              <span><span className="block text-sm text-muted-foreground">{x.l}</span><span className="block break-all font-bold text-ink">{x.v}</span></span>
+              <span><span className="block text-sm text-muted-foreground">{x.l}</span><span className="block break-all text-ink">{x.v}</span></span>
             </a>
           ))}
           <p className="px-2 text-sm text-muted-foreground">Free consultation. We reply to every message, usually within one day.</p>
@@ -58,7 +58,7 @@ function Contact() {
           {state === "done" ? (
             <div className="lux-card p-12 text-center shadow-soft">
               <CheckCircle2 className="mx-auto h-14 w-14 text-success" />
-              <h2 className="mt-4 text-3xl font-bold">Message received!</h2>
+              <h2 className="mt-4 text-3xl">Message received!</h2>
               <p className="mt-3 text-muted-foreground">Thank you, {f.name}. Our team will reply to {f.email} soon.</p>
             </div>
           ) : (
@@ -71,7 +71,7 @@ function Contact() {
               </select>
               <textarea className={`${input} min-h-40 sm:col-span-2`} placeholder="Tell us about your project *" maxLength={2000} value={f.message} onChange={(e) => setF({ ...f, message: e.target.value })} />
               {err && <p className="text-sm text-destructive sm:col-span-2">{err}</p>}
-              <button disabled={state === "busy"} className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-primary px-8 py-4 font-bold text-primary-foreground shadow-glow transition hover:-translate-y-0.5 disabled:opacity-60 sm:col-span-2">
+              <button disabled={state === "busy"} className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-primary px-8 py-4 text-primary-foreground shadow-glow transition hover:-translate-y-0.5 disabled:opacity-60 sm:col-span-2">
                 <Send className="h-5 w-5" /> {state === "busy" ? "Sending…" : "Let's Talk"}
               </button>
             </form>
