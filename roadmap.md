@@ -1,4 +1,4 @@
 - [x] Redesign shared typography, palette, navigation and footer.
 - [x] Rebuild home and page-level visuals, with prominent page links within the content.
 - [x] Preserve forms and verify navigation, motion and narrow-screen layout.
-- [ ] Add back controls, refine the home brand heading, and use authentic toolkit brand logos; verify navigation.
+- [x] Add back controls, refine the home brand heading, and use authentic toolkit brand logos; verify navigation.
