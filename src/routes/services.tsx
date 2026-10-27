@@ -22,13 +22,13 @@ function Services() {
   return (
     <>
       <PageHero eyebrow="Services" title={<>Whatever you need, <span className="text-gradient">we build it.</span></>} text="From a one-page site to a full web platform — every service includes domain setup, hosting on Vercel, code on GitHub, SEO and support." />
-      <section className="mx-auto grid max-w-7xl gap-6 px-6 pb-12 md:grid-cols-2 lg:grid-cols-3">
+      <section className="site-container pb-12">
         {LIST.map((s, i) => (
           <Reveal key={s.t} delay={i * 60}>
-            <div className="h-full lux-card p-8 transition hover:-translate-y-2 hover:shadow-glow">
-              <span className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-primary text-primary-foreground"><s.icon className="h-6 w-6" /></span>
-              <h2 className="mt-6 text-2xl">{s.t}</h2>
-              <ul className="mt-5 space-y-3">
+            <div className="service-detail">
+              <span className="eyebrow">0{i + 1}</span>
+              <h2>{s.t}</h2>
+              <ul>
                 {s.f.map((x) => <li key={x} className="flex gap-2 text-muted-foreground"><Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />{x}</li>)}
               </ul>
             </div>

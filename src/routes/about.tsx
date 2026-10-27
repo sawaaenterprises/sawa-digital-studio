@@ -1,65 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Award, MapPin, Calendar, Crown } from "lucide-react";
-import { PageHero, Reveal } from "@/components/site/Reveal";
-import { CtaBand } from "@/components/site/CtaBand";
-import { SITE, TEAM, CERTS } from "@/lib/site";
-import { seo } from "@/lib/seo";
-
-export const Route = createFileRoute("/about")({
-  head: () => ({ meta: seo("About Sawaa Enterprises — Founded by Syed Abdul Wahab", "Sawaa Enterprises was founded in 2025 in Hyderabad, India by owner Syed Abdul Wahab, with Director Syed Basharath Ali, Co-Director Syed Ahmed Ali and Co-Founder Mohd Sufyaan Sayeed.") }),
-  component: About,
-});
-
-function About() {
-  return (
-    <>
-      <PageHero eyebrow="About us" title={<>A Hyderabad team, <span className="text-gradient">building for the world.</span></>} text={`Founded in ${SITE.founded} by ${SITE.owner}, Sawaa Enterprises exists for one reason: no business should lose clients because of a bad website.`} />
-      <section className="mx-auto grid max-w-5xl gap-6 px-6 md:grid-cols-3">
-        {[
-          { icon: Crown, l: "Founder & Owner", v: SITE.owner },
-          { icon: Calendar, l: "Founded", v: String(SITE.founded) },
-          { icon: MapPin, l: "Headquarters", v: SITE.location },
-        ].map((x, i) => (
-          <Reveal key={x.l} delay={i * 80}>
-            <div className="lux-card p-7 text-center shadow-soft">
-              <x.icon className="mx-auto h-6 w-6 text-primary" />
-              <p className="mt-3 text-sm text-muted-foreground">{x.l}</p>
-              <p className="mt-1 font-display text-xl text-ink">{x.v}</p>
-            </div>
-          </Reveal>
-        ))}
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <Reveal className="text-center"><h2 className="text-4xl md:text-5xl">Leadership</h2></Reveal>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {TEAM.map((m, i) => (
-            <Reveal key={m.name} delay={i * 80}>
-              <div className={`h-full lux-card p-8 text-center transition hover:-translate-y-2 hover:shadow-glow ${i === 0 ? "border-primary/50 shadow-glow" : ""}`}>
-                <span className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-gradient-primary font-display text-2xl text-primary-foreground">
-                  {m.name.split(" ").filter((p) => p.length > 2).slice(-2).map((p) => p[0]).join("")}
-                </span>
-                <h3 className="mt-5 text-lg">{m.name}</h3>
-                <p className="mt-1 text-sm text-primary">{m.role}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-secondary/60 py-24">
-        <div className="mx-auto max-w-5xl px-6 text-center">
-          <Reveal><h2 className="text-4xl md:text-5xl">Certified expertise</h2></Reveal>
-          <div className="mt-12 flex flex-wrap justify-center gap-4">
-            {CERTS.map((c, i) => (
-              <Reveal key={c} delay={i * 60}>
-                <div className="flex items-center gap-3 rounded-full border bg-card px-6 py-4 text-ink shadow-soft"><Award className="h-5 w-5 text-primary" />{c}</div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-      <CtaBand />
-    </>
-  );
-}
+import { createFileRoute } from '@tanstack/react-router';
+import { Asterisk } from 'lucide-react';
+import { PageHero, Reveal } from '@/components/site/Reveal';
+import { CtaBand } from '@/components/site/CtaBand';
+import { SITE, TEAM, CERTS } from '@/lib/site';
+import { seo } from '@/lib/seo';
+export const Route=createFileRoute('/about')({head:()=>({meta:seo('Our Studio — Sawaa Enterprises & Syed Abdul Wahab','Meet Sawaa Enterprises, founded in 2025 in Hyderabad by Syed Abdul Wahab with Syed Basharath Ali, Syed Ahmed Ali and Mohd Sufyaan Sayeed.')}),component:About});
+function About(){return <><PageHero eyebrow="03 / The people behind the pixels" title={<>Independent minds.<br/><em className="text-gradient">Shared ambition.</em></>} text={`Founded in ${SITE.founded} by ${SITE.owner}, Sawaa Enterprises exists for one reason: no business should lose clients because of a bad website.`}/><section className="site-container"><Reveal><div className="about-facts">{[['Founder & Owner',SITE.owner],['Founded',String(SITE.founded)],['From Hyderabad, for the world',SITE.location]].map(([l,v])=><div key={l}><span className="eyebrow">{l}</span><h3>{v}</h3></div>)}</div></Reveal></section><section className="section-space site-container"><div className="team-intro"><Reveal><span className="eyebrow">Our leadership</span><h2>A small team.<br/><em>A lasting impact.</em></h2></Reveal><Asterisk className="team-star slow-rotate"/></div><div className="team-list">{TEAM.map((m,i)=><div key={m.name}><span className="eyebrow">0{i+1}</span><h3>{m.name}</h3><p>{m.role}</p></div>)}</div></section><section className="promise-section section-space"><div className="site-container"><Reveal><span className="eyebrow">Always learning. Always growing.</span><h2 className="mt-5">Certified <em>expertise.</em></h2><div className="cert-list">{CERTS.map(c=><span key={c}>{c}</span>)}</div></Reveal></div></section><CtaBand/></>;}
