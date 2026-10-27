@@ -30,7 +30,7 @@ export function Comments() {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     const r = schema.safeParse(form);
-    if (!r.success) return setErr(r.error.issues[0].message);
+    if (!r.success) return setErr(r.error.issues[0]?.message ?? "Please check the form");
     setBusy(true); setErr("");
     const { data, error } = await supabase.from("comments").insert({ ...r.data, country: r.data.country || null }).select().single();
     setBusy(false);

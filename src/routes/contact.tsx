@@ -29,7 +29,7 @@ function Contact() {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     const r = schema.safeParse(f);
-    if (!r.success) return setErr(r.error.issues[0].message);
+    if (!r.success) return setErr(r.error.issues[0]?.message ?? "Please check the form");
     setErr(""); setState("busy");
     const { error } = await supabase.from("contact_messages").insert({ ...r.data, country: r.data.country || null });
     if (error) { setState("idle"); return setErr("Something went wrong. Please email us directly."); }
