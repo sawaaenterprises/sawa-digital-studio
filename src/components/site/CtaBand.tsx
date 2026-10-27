@@ -1,21 +1,7 @@
-import { Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
-import { SITE } from "@/lib/site";
-import { Reveal } from "./Reveal";
-
-export function CtaBand() {
-  return (
-    <section className="px-6 py-24">
-      <Reveal>
-        <div className="relative mx-auto max-w-7xl overflow-hidden bg-gradient-primary px-8 py-24 text-center">
-          <div className="absolute -left-10 -top-10 h-56 w-56 rounded-full bg-primary-foreground/15 blur-2xl animate-blob" />
-          <h2 className="relative text-5xl text-primary-foreground md:text-7xl">{SITE.tagline}</h2>
-          <p className="relative mt-6 text-lg text-primary-foreground/90">{SITE.cta}</p>
-          <Link to="/contact" className="relative mt-6 inline-flex items-center gap-2 rounded-full bg-card px-8 py-4 text-primary transition-transform hover:-translate-y-1">
-            Let's Talk <ArrowRight className="h-5 w-5" />
-          </Link>
-        </div>
-      </Reveal>
-    </section>
-  );
-}
+import { Link } from '@tanstack/react-router';
+import { ArrowUpRight, Asterisk } from 'lucide-react';
+import { SITE } from '@/lib/site';
+import { Button } from '@/components/ui/button';
+import { Reveal } from './Reveal';
+import { PageDirectory } from './PageDirectory';
+export function CtaBand() {return <><PageDirectory/><section className="cta-band"><div className="site-container"><Reveal><span className="eyebrow">A better website. A bigger future.</span><h2>Let’s make<br/><em>your next move.</em><Asterisk className="cta-star slow-rotate"/></h2><div className="cta-bottom"><p>{SITE.cta}</p><Button asChild className="studio-button" variant="secondary"><Link to="/contact">Let's Talk <ArrowUpRight/></Link></Button></div></Reveal></div></section></>;}
