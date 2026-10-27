@@ -42,22 +42,22 @@ export function Comments() {
   const input = "w-full rounded-xl border bg-background px-4 py-3 outline-none transition focus:border-primary focus:ring-4 focus:ring-primary/15";
   return (
     <div className="grid gap-10 lg:grid-cols-5">
-      <form onSubmit={submit} className="space-y-4 rounded-3xl border bg-card p-6 shadow-soft lg:col-span-2">
-        <h3 className="flex items-center gap-2 text-xl font-bold"><MessageSquare className="h-5 w-5 text-primary" /> Leave a comment</h3>
+      <form onSubmit={submit} className="space-y-4 lux-card p-6 shadow-soft lg:col-span-2">
+        <h3 className="flex items-center gap-2 text-xl"><MessageSquare className="h-5 w-5 text-primary" /> Leave a comment</h3>
         <p className="text-sm text-muted-foreground">Your comment appears live for visitors around the world.</p>
         <input className={input} placeholder="Your name" maxLength={60} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
         <input className={input} placeholder="Country (optional)" maxLength={60} value={form.country} onChange={(e) => setForm({ ...form, country: e.target.value })} />
         <textarea className={`${input} min-h-28`} placeholder="Share your thoughts…" maxLength={500} value={form.body} onChange={(e) => setForm({ ...form, body: e.target.value })} />
         {err && <p className="text-sm text-destructive">{err}</p>}
-        <button disabled={busy} className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-primary px-6 py-3 font-bold text-primary-foreground shadow-glow disabled:opacity-60">
+        <button disabled={busy} className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-primary px-6 py-3 text-primary-foreground shadow-glow disabled:opacity-60">
           <Send className="h-4 w-4" /> {busy ? "Posting…" : "Post comment"}
         </button>
       </form>
       <div className="max-h-[560px] space-y-4 overflow-y-auto pr-2 lg:col-span-3">
         {list.map((c) => (
-          <article key={c.id} className="rounded-2xl border bg-card p-5 animate-in fade-in slide-in-from-bottom-2">
+          <article key={c.id} className="lux-card p-5 animate-in fade-in slide-in-from-bottom-2">
             <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-gradient-primary font-bold text-primary-foreground">{c.name[0]?.toUpperCase()}</span>
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-gradient-primary text-primary-foreground">{c.name[0]?.toUpperCase()}</span>
               <div>
                 <p className="font-bold text-ink">{c.name}</p>
                 <p className="text-xs text-muted-foreground">{c.country ? `${c.country} · ` : ""}{new Date(c.created_at).toLocaleDateString()}</p>

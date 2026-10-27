@@ -31,10 +31,10 @@ export function PageHero({ eyebrow, title, text }: { eyebrow: string; title: Rea
       <div className="absolute inset-0 grid-bg opacity-60" />
       <div className="relative mx-auto max-w-4xl px-6 text-center">
         <Reveal>
-          <span className="inline-block rounded-full border border-primary/20 bg-card/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+          <span className="inline-block rounded-full border border-primary/20 bg-card/70 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-primary">
             {eyebrow}
           </span>
-          <h1 className="mt-6 text-4xl font-bold md:text-6xl">{title}</h1>
+          <h1 className="mt-6 text-4xl md:text-6xl">{title}</h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">{text}</p>
         </Reveal>
       </div>

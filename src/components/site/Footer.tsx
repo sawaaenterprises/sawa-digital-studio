@@ -26,7 +26,7 @@ export function Footer() {
           </div>
         </div>
         <div>
-          <h3 className="text-sm font-bold uppercase tracking-widest">Company</h3>
+          <h3 className="text-sm uppercase tracking-widest">Company</h3>
           <ul className="mt-5 space-y-3 text-muted-foreground">
             <li><Link to="/services" className="hover:text-primary">Services</Link></li>
             <li><Link to="/portfolio" className="hover:text-primary">Our work</Link></li>
@@ -36,12 +36,12 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <h3 className="text-sm font-bold uppercase tracking-widest">Reach us</h3>
+          <h3 className="text-sm uppercase tracking-widest">Reach us</h3>
           <ul className="mt-5 space-y-3 text-muted-foreground">
             <li className="flex gap-2"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" /><a href={`mailto:${SITE.email}`} className="break-all hover:text-primary">{SITE.email}</a></li>
             <li className="flex gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{SITE.location} · Serving worldwide</li>
           </ul>
-          <Link to="/contact" className="mt-6 inline-flex items-center gap-1 font-bold text-primary">Start a project <ArrowUpRight className="h-4 w-4" /></Link>
+          <Link to="/contact" className="mt-6 inline-flex items-center gap-1 text-primary">Start a project <ArrowUpRight className="h-4 w-4" /></Link>
         </div>
       </div>
       <div className="border-t">

@@ -17,8 +17,8 @@ export function CookieBanner() {
         <Cookie className="h-6 w-6 shrink-0 text-primary" />
         <p className="flex-1 text-sm text-muted-foreground">We use essential cookies to keep this site fast and secure, and to remember your preferences.</p>
         <div className="flex gap-2">
-          <button onClick={() => choose("essential")} className="rounded-full border px-4 py-2 text-sm font-semibold">Essential only</button>
-          <button onClick={() => choose("all")} className="rounded-full bg-gradient-primary px-4 py-2 text-sm font-bold text-primary-foreground">Accept</button>
+          <button onClick={() => choose("essential")} className="rounded-full border px-4 py-2 text-sm">Essential only</button>
+          <button onClick={() => choose("all")} className="rounded-full bg-gradient-primary px-4 py-2 text-sm text-primary-foreground">Accept</button>
         </div>
       </div>
     </div>
