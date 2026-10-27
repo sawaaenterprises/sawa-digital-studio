@@ -21,7 +21,7 @@ function About() {
           { icon: MapPin, l: "Headquarters", v: SITE.location },
         ].map((x, i) => (
           <Reveal key={x.l} delay={i * 80}>
-            <div className="rounded-3xl border bg-card p-7 text-center shadow-soft">
+            <div className="lux-card p-7 text-center shadow-soft">
               <x.icon className="mx-auto h-6 w-6 text-primary" />
               <p className="mt-3 text-sm text-muted-foreground">{x.l}</p>
               <p className="mt-1 font-display text-xl font-bold text-ink">{x.v}</p>
@@ -35,7 +35,7 @@ function About() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {TEAM.map((m, i) => (
             <Reveal key={m.name} delay={i * 80}>
-              <div className={`h-full rounded-3xl border bg-card p-8 text-center transition hover:-translate-y-2 hover:shadow-glow ${i === 0 ? "border-primary/50 shadow-glow" : ""}`}>
+              <div className={`h-full lux-card p-8 text-center transition hover:-translate-y-2 hover:shadow-glow ${i === 0 ? "border-primary/50 shadow-glow" : ""}`}>
                 <span className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-gradient-primary font-display text-2xl font-bold text-primary-foreground">
                   {m.name.split(" ").filter((p) => p.length > 2).slice(-2).map((p) => p[0]).join("")}
                 </span>

@@ -40,7 +40,7 @@ export function HomeExtra() {
         <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
           {INDUSTRIES.map((x, i) => (
             <Reveal key={x.t} delay={i * 50}>
-              <div className="group flex items-center gap-3 rounded-2xl border bg-card p-5 transition hover:-translate-y-1 hover:shadow-glow">
+              <div className="group flex items-center gap-3 lux-card p-5 transition hover:-translate-y-1 hover:shadow-glow">
                 <span className="grid h-11 w-11 place-items-center rounded-xl bg-accent text-accent-foreground transition group-hover:rotate-6 group-hover:bg-gradient-primary group-hover:text-primary-foreground"><x.icon className="h-5 w-5" /></span>
                 <span className="font-bold text-ink">{x.t}</span>
               </div>
@@ -53,7 +53,7 @@ export function HomeExtra() {
         <div className="mx-auto max-w-5xl px-6">
           <Reveal className="text-center"><h2 className="text-4xl font-bold md:text-5xl">Why clients choose <span className="text-gradient">Sawaa</span></h2></Reveal>
           <Reveal delay={100}>
-            <div className="mt-12 overflow-hidden rounded-3xl border bg-card shadow-soft">
+            <div className="mt-12 overflow-hidden lux-card shadow-soft">
               <div className="grid grid-cols-3 border-b bg-muted px-6 py-4 text-sm font-bold text-ink"><span>What you get</span><span className="text-center text-primary">Sawaa Enterprises</span><span className="text-center text-muted-foreground">Typical agency</span></div>
               {["Free consultation", "Custom design, no templates", "Works on every device", "SEO & Google indexing", "Domain + hosting setup", "Support after launch"].map((r, i) => (
                 <div key={r} className="grid grid-cols-3 items-center border-b px-6 py-4 last:border-0">
@@ -72,7 +72,7 @@ export function HomeExtra() {
         <div className="mt-12 overflow-hidden">
           <div className="flex w-max gap-6 animate-marquee hover:[animation-play-state:paused]">
             {[...QUOTES, ...QUOTES].map((q, i) => (
-              <figure key={i} className="w-[340px] shrink-0 rounded-3xl border bg-card p-7 shadow-soft">
+              <figure key={i} className="w-[340px] shrink-0 lux-card p-7 shadow-soft">
                 <Quote className="h-7 w-7 text-primary" />
                 <blockquote className="mt-4 text-ink">{q.q}</blockquote>
                 <figcaption className="mt-5 text-sm"><strong className="text-ink">{q.n}</strong><span className="block text-muted-foreground">{q.r}</span></figcaption>
@@ -93,7 +93,7 @@ export function HomeExtra() {
           <div className="grid grid-cols-2 gap-4">
             {TEAM.map((m, i) => (
               <Reveal key={m.name} delay={i * 80}>
-                <div className="rounded-3xl border bg-card p-6 text-center transition hover:-translate-y-1 hover:shadow-glow">
+                <div className="lux-card p-6 text-center transition hover:-translate-y-1 hover:shadow-glow">
                   <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-gradient-primary font-display font-bold text-primary-foreground">{m.name.split(" ").slice(-1)[0]?.[0]}</span>
                   <p className="mt-3 font-bold text-ink">{m.name}</p>
                   <p className="text-xs font-semibold text-primary">{m.role}</p>
@@ -110,7 +110,7 @@ export function HomeExtra() {
           <div className="mt-12 space-y-3">
             {FAQ.map(([q, a], i) => (
               <Reveal key={q} delay={i * 40}>
-                <div className="rounded-2xl border bg-card">
+                <div className="lux-card">
                   <button onClick={() => setOpen(open === i ? -1 : i)} className="flex w-full items-center justify-between gap-4 p-6 text-left font-bold text-ink" aria-expanded={open === i}>
                     {q}{open === i ? <Minus className="h-5 w-5 shrink-0 text-primary" /> : <Plus className="h-5 w-5 shrink-0 text-primary" />}
                   </button>

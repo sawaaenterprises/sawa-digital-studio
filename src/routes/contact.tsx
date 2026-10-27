@@ -47,7 +47,7 @@ function Contact() {
             { icon: MapPin, l: "Based in", v: SITE.location },
             { icon: Globe2, l: "We serve", v: "Clients in every country" },
           ].map((x) => (
-            <a key={x.l} href={x.href} className="flex gap-4 rounded-2xl border bg-card p-6 transition hover:shadow-soft">
+            <a key={x.l} href={x.href} className="flex gap-4 lux-card p-6 transition hover:shadow-soft">
               <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-primary text-primary-foreground"><x.icon className="h-5 w-5" /></span>
               <span><span className="block text-sm text-muted-foreground">{x.l}</span><span className="block break-all font-bold text-ink">{x.v}</span></span>
             </a>
@@ -56,13 +56,13 @@ function Contact() {
         </Reveal>
         <Reveal delay={120} className="lg:col-span-3">
           {state === "done" ? (
-            <div className="rounded-3xl border bg-card p-12 text-center shadow-soft">
+            <div className="lux-card p-12 text-center shadow-soft">
               <CheckCircle2 className="mx-auto h-14 w-14 text-success" />
               <h2 className="mt-4 text-3xl font-bold">Message received!</h2>
               <p className="mt-3 text-muted-foreground">Thank you, {f.name}. Our team will reply to {f.email} soon.</p>
             </div>
           ) : (
-            <form onSubmit={submit} className="grid gap-4 rounded-3xl border bg-card p-8 shadow-soft sm:grid-cols-2">
+            <form onSubmit={submit} className="grid gap-4 lux-card p-8 shadow-soft sm:grid-cols-2">
               <input className={input} placeholder="Your name *" maxLength={100} value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} />
               <input className={input} type="email" placeholder="Email *" maxLength={255} value={f.email} onChange={(e) => setF({ ...f, email: e.target.value })} />
               <input className={input} placeholder="Country" maxLength={80} value={f.country} onChange={(e) => setF({ ...f, country: e.target.value })} />

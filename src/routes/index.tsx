@@ -98,7 +98,7 @@ function Index() {
             { icon: Award, n: "5", l: "Industry certificates" },
           ].map((s, i) => (
             <Reveal key={s.l} delay={i * 80}>
-              <div className="rounded-3xl border bg-card p-7 shadow-soft transition hover:-translate-y-1">
+              <div className="lux-card p-7 shadow-soft transition hover:-translate-y-1">
                 <s.icon className="h-6 w-6 text-primary" />
                 <p className="mt-4 font-display text-4xl font-extrabold text-ink">{s.n}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{s.l}</p>
@@ -116,7 +116,7 @@ function Index() {
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s, i) => (
             <Reveal key={s.t} delay={i * 70}>
-              <div className="group h-full rounded-3xl border bg-card p-8 transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-glow">
+              <div className="group h-full lux-card p-8 transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-glow">
                 <span className="grid h-14 w-14 place-items-center rounded-2xl bg-accent text-primary transition group-hover:bg-gradient-primary group-hover:text-primary-foreground"><s.icon className="h-6 w-6" /></span>
                 <h3 className="mt-6 text-xl font-bold">{s.t}</h3>
                 <p className="mt-2 text-muted-foreground">{s.d}</p>
@@ -135,7 +135,7 @@ function Index() {
           <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
             {STACK.map((s, i) => (
               <Reveal key={s.t} delay={i * 50}>
-                <div className="rounded-2xl border bg-card p-6 transition hover:-translate-y-1 hover:shadow-soft">
+                <div className="lux-card p-6 transition hover:-translate-y-1 hover:shadow-soft">
                   <s.icon className="h-7 w-7 text-primary" />
                   <p className="mt-4 font-bold text-ink">{s.t}</p>
                   <p className="text-sm text-muted-foreground">{s.d}</p>
@@ -157,7 +157,7 @@ function Index() {
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {WORK.map((w, i) => (
             <Reveal key={w.url} delay={i * 100}>
-              <a href={w.url} target="_blank" rel="noopener" className="group block h-full overflow-hidden rounded-3xl border bg-card transition hover:-translate-y-2 hover:shadow-glow">
+              <a href={w.url} target="_blank" rel="noopener" className="group block h-full overflow-hidden lux-card transition hover:-translate-y-2 hover:shadow-glow">
                 <div className="relative aspect-[4/3] overflow-hidden bg-hero">
                   <div className="absolute inset-0 grid-bg" />
                   <div className="absolute inset-6 rounded-xl border bg-card p-4 shadow-soft transition duration-700 group-hover:scale-105">
@@ -188,7 +188,7 @@ function Index() {
             { n: "03", t: "Launch & support", d: "We go live on your domain and keep it running smoothly." },
           ].map((s, i) => (
             <Reveal key={s.n} delay={i * 100}>
-              <div className="h-full rounded-3xl border bg-card p-8">
+              <div className="h-full lux-card p-8">
                 <p className="font-display text-5xl font-extrabold text-gradient">{s.n}</p>
                 <h3 className="mt-4 text-xl font-bold">{s.t}</h3>
                 <p className="mt-2 text-muted-foreground">{s.d}</p>

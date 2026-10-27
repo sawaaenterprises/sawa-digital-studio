@@ -17,10 +17,10 @@ function Portfolio() {
       <section className="mx-auto max-w-6xl space-y-8 px-6">
         {WORK.map((w, i) => (
           <Reveal key={w.url} delay={i * 80}>
-            <a href={w.url} target="_blank" rel="noopener" className="group grid overflow-hidden rounded-[2rem] border bg-card transition hover:shadow-glow md:grid-cols-2">
+            <a href={w.url} target="_blank" rel="noopener" className="group grid overflow-hidden lux-card transition hover:shadow-glow md:grid-cols-2">
               <div className="relative min-h-64 overflow-hidden bg-hero">
                 <div className="absolute inset-0 grid-bg" />
-                <div className="absolute inset-8 rounded-2xl border bg-card p-6 shadow-soft transition duration-700 group-hover:scale-105 group-hover:-rotate-1">
+                <div className="absolute inset-8 lux-card p-6 shadow-soft transition duration-700 group-hover:scale-105 group-hover:-rotate-1">
                   <div className="flex gap-1.5"><span className="h-3 w-3 rounded-full bg-border" /><span className="h-3 w-3 rounded-full bg-border" /><span className="h-3 w-3 rounded-full bg-border" /></div>
                   <p className="mt-8 font-display text-2xl font-bold text-ink">{w.title}</p>
                   <div className="mt-4 space-y-2"><div className="h-2 w-3/4 rounded bg-accent" /><div className="h-2 w-1/2 rounded bg-accent" /></div>
