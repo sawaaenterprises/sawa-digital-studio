@@ -6,7 +6,7 @@ export async function sendToInbox(fields: Record<string, string>) {
     method: "POST",
     headers: { "Content-Type": "application/json", Accept: "application/json" },
     body: JSON.stringify({
-      _subject: `New enquiry — ${fields.name ?? "Website visitor"}`,
+      _subject: `New enquiry — ${fields['name'] ?? "Website visitor"}`,
       _template: "table",
       _captcha: "false",
       ...fields,
